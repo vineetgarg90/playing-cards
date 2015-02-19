@@ -1,0 +1,347 @@
+<html>
+
+<head>
+<meta charset="UTF-8" />
+	<title>Animating Playing Cards - Jquery & CSS</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<button type='button' onclick='reset_cards()'>Stack</button>
+<button type='button' onclick='animate_card(45)'>Animate 45</button>
+<button type='button' onclick='animate_card(360)'>Animate 360</button>
+<button type='button' onclick='separate_instantly()'>Separate instantly</button>
+<button type='button' onclick='separate_one_by_one()'>Separate slowly</button>
+<button type='button' onclick='flower_animation()'>Flower Animation</button>
+<button type='button' onclick='open_all_cards()'>Open all</button>
+<button type='button' onclick='close_all_cards()'>Close all</button>
+<button type='button' onclick='shufle_cards()'>Shuffle</button>
+<br><br>
+<button type='button' onclick='begin_madness()'>Go Mad</button>
+<button type='button' onclick='stop_madness()'>Back to Normal</button>
+
+<!-- cards container -->
+<div id='pack_cont'>
+	
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='A' data-title='A ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='2' data-title='2 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='3' data-title='3 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='4' data-title='4 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='5' data-title='5 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='6' data-title='6 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='7' data-title='7 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='8' data-title='8 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='9' data-title='9 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card' >
+		<span data-value='10' data-title='10 ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='J' data-title='J ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='Q' data-title='Q ♣'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='K' data-title='K ♣'></span>
+	</div>
+	<!-- single card -->
+
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='A' data-title='A ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='2' data-title='2 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='3' data-title='3 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='4' data-title='4 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='5' data-title='5 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='6' data-title='6 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='7' data-title='7 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='8' data-title='8 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='9' data-title='9 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red' >
+		<span data-value='10' data-title='10 ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='J' data-title='J ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='Q' data-title='Q ♦'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='K' data-title='K ♦'></span>
+	</div>
+	<!-- single card -->
+
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='A' data-title='A ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='2' data-title='2 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='3' data-title='3 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='4' data-title='4 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='5' data-title='5 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='6' data-title='6 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='7' data-title='7 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='8' data-title='8 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='9' data-title='9 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red' >
+		<span data-value='10' data-title='10 ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='J' data-title='J ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='Q' data-title='Q ♥'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card red'>
+		<span data-value='K' data-title='K ♥'></span>
+	</div>
+	<!-- single card -->
+
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='A' data-title='A ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='2' data-title='2 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='3' data-title='3 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='4' data-title='4 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='5' data-title='5 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='6' data-title='6 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='7' data-title='7 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='8' data-title='8 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='9' data-title='9 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card' >
+		<span data-value='10' data-title='10 ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='J' data-title='J ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='Q' data-title='Q ♠'></span>
+	</div>
+	<!-- single card -->
+
+	<!-- single card -->
+	<div class='card'>
+		<span data-value='K' data-title='K ♠'></span>
+	</div>
+	<!-- single card -->				
+</div>
+<!-- cards container -->
+
+<script type="text/javascript" src='jquery.min.js'></script>
+<script type="text/javascript" src='js/script.js'></script>
+
+</body>
+</html>

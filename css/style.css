@@ -1,0 +1,93 @@
+#pack_cont{
+width: 900px;
+height: 1200px;
+overflow-y:scroll;
+margin: 50px auto; 
+padding: 50px 140px;
+background-color: green;
+border: 20px solid rgb(55, 27, 27);
+border-radius: 30px;
+}
+
+/*single card*/
+.card{
+width: 100px;
+height: 140px;
+border: 1px solid #ddd;
+border-radius: 10px;
+position: absolute;
+background-color: white;
+background-image: url('../card.png');
+background-size: contain;
+background-repeat: no-repeat;
+cursor: pointer;
+
+/*all transition to take 1s */
+transition:all 1s;
+-ms-transition:all 1s;
+-webkit-transition:all 1s;
+-moz-transition:all 1s;
+
+/*set card transform origin to 20% from x-axis and 80% from y-axis */
+transform-origin: 20% 80%;
+-ms-transform-origin: 20% 80%;
+-webikit-transform-origin: 20% 80%;
+-moz-transform-origin: 20% 80%;
+
+text-align: center;
+
+/*make card non selectable*/
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+/*red colored card*/
+.card.red{
+color:red;
+}
+
+/*to show card value */
+/*rotate the text to 180deg so the text is not mirrored when card is flipped*/
+.card.open:before{
+-webkit-transform: rotateY(180deg);
+transform:  rotateY( 180deg );
+/*grab card value from data attribute*/
+content:attr(data-title);
+background: white;
+text-align: center;
+}
+
+/* open card text*/
+.card.opened span:after{
+content:attr(data-title);
+transform: rotateY( 180deg );
+font-size: 40px;
+display: block;
+}
+
+/*hide background from open card */
+.card.opened{	
+background-image: none;
+}
+
+/*
+while opening a card, again shift transform origin 
+to vertical and horizontal center axis 
+to give an actual flip effect
+*/
+.card.open{
+transform-origin: center center !important;
+-ms-transform-origin: center center !important;
+-webikit-transform-origin: center center !important;
+-moz-transform-origin: center center !important;
+-webkit-transform: rotateY(180deg) !important;
+transform:  rotateY( 180deg ) !important;
+}
+
+button{
+	cursor: pointer;
+}

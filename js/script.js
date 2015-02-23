@@ -213,11 +213,15 @@ function shufle_cards(){
 // };
 // shuffle(myArray);
 
-//create shuffle effect
+//shuffle all cards in DOM
+$('.card').shuffle();
+
+//create shuffle effect(just to show it to user)
 var i = 0;
 var time = 0;
 var shuffle_time = 4;
 var counter = 0;
+
 $($('.card').get().reverse()).each(function(){
 	var card = $(this);
 	setTimeout(function(){
@@ -235,7 +239,6 @@ $($('.card').get().reverse()).each(function(){
 		return false;
 });
 reset_cards();
-$('.card').shuffle();
 
 }
 

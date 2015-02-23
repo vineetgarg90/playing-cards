@@ -98,13 +98,13 @@ function separate_instantly(){
 
 //slowly separate all cards in a line
 function separate_one_by_one(){
-	var left = 0;
-	var card_width = $('.card').width();
-	var card_height = $('.card').height();
-	//initial top margin for card placement
-	var top = card_height;
-	//initial left margin for card placement
-	var left_step =  card_width + card_spacing;
+var left = 0;
+var card_width = $('.card').width();
+var card_height = $('.card').height();
+//initial top margin for card placement
+var top = card_height;
+//initial left margin for card placement
+var left_step =  card_width + card_spacing;
 	
 	//time lag between each card placement
 	var sec_step = 100;
@@ -206,13 +206,6 @@ function shuffle(o){ //v1.0
 };
 
 function shufle_cards(){
-
-// var myArray = [];
-// for (var i = 1; i <= total_cards; i++) {
-// 	myArray.push(i);
-// };
-// shuffle(myArray);
-
 //shuffle all cards in DOM
 $('.card').shuffle();
 
@@ -244,14 +237,14 @@ reset_cards();
 
 $(document).ready(function(){
 	stack_cards(0.2);
-	//card click event
-	$('.card').click(function(){
-		var card = $(this);
-		card.toggleClass('open');
-		setTimeout(function(){
-			card.toggleClass('opened');
-		},300);
-	});
+		//card click event
+		$('.card').click(function(){
+			var card = $(this);
+			card.toggleClass('open');
+			setTimeout(function(){
+				card.toggleClass('opened');
+			},300);
+		});
 
 	//the game
 

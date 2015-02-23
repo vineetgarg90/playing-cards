@@ -2,6 +2,34 @@ var card_container_width = $('#pack_cont').width();
 var total_cards = $('.card').length; //any number of cards will work
 var card_spacing = 10;
 
+//shuffle plugin
+(function($){
+ 
+    $.fn.shuffle = function() {
+ 
+        var allElems = this.get(),
+            getRandom = function(max) {
+                return Math.floor(Math.random() * max);
+            },
+            shuffled = $.map(allElems, function(){
+                var random = getRandom(allElems.length),
+                    randEl = $(allElems[random]).clone(true)[0];
+                allElems.splice(random, 1);
+                return randEl;
+           });
+ 
+        this.each(function(i){
+            $(this).replaceWith($(shuffled[i]));
+        });
+ 
+        return $(shuffled);
+ 
+    };
+ 
+})(jQuery);
+//shuffle plugin
+
+
 //bring cards to initail stacked position
 function reset_cards(){
 	//hide all cards faces
@@ -207,8 +235,13 @@ $($('.card').get().reverse()).each(function(){
 		return false;
 });
 reset_cards();
+$('.card').shuffle();
+
 }
 
+function shuffle(){
+	$('.card').shuffle();	
+}
 
 $(document).ready(function(){
 	stack_cards(0.2);
@@ -220,5 +253,9 @@ $(document).ready(function(){
 			card.toggleClass('opened');
 		},300);
 	});
+
+	//the game
+
+
 });
 

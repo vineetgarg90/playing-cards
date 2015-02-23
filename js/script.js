@@ -242,10 +242,6 @@ reset_cards();
 
 }
 
-function shuffle(){
-	$('.card').shuffle();	
-}
-
 $(document).ready(function(){
 	stack_cards(0.2);
 	//card click event
